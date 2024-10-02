@@ -1,4 +1,14 @@
+import { Link, NavLink } from "react-router-dom";
+
 const NavBar = () => {
+
+    const link =
+        <>
+            <li><NavLink className={({ isActive }) => isActive ? 'border border-[#23BE0A] text-[#23BE0A] font-semibold px-4 py-2 rounded-lg' : 'font-semibold px-4 py-2'} to="/">Home</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'border border-[#23BE0A] text-[#23BE0A] font-semibold px-4 py-2 rounded-lg' : 'font-semibold px-4 py-2'} to="/listed-books">Listed Books</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'border border-[#23BE0A] text-[#23BE0A] font-semibold px-4 py-2 rounded-lg' : 'font-semibold px-4 py-2'} to="/pages-to-read">Pages to Read</NavLink></li>
+    </>
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -20,18 +30,18 @@ const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>Listed Books</a></li>
-                        <li><a>Pages to Read</a></li>
+                        {
+                            link
+                        }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-2xl font-bold">GronthoMala</a>
+                <Link to="/"><a className="btn btn-ghost text-2xl font-bold">GronthoMala</a></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold gap-4">
-                    <li><a>Home</a></li>
-                    <li><a>Listed Books</a></li>
-                    <li><a>Pages to Read</a></li>
+                    {
+                        link
+                    }
                 </ul>
             </div>
             <div className="navbar-end gap-4">
