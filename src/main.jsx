@@ -11,6 +11,7 @@ import ListedBooks from './Components/ListedBooks/ListedBooks';
 import PagesToRead from './Components/Banner/PagesToRead/PagesToRead';
 import Books from './Components/Books/Books';
 import BookDetails from './Components/BookDetails/BookDetails';
+import ReadLists from './Components/ReadLists/ReadLists';
 
 const router = createBrowserRouter([
   {
@@ -25,11 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/listed-books",
         element: <ListedBooks></ListedBooks>,
-        children: [
-          {
-
-          }
-        ]
+        loader: () => fetch("/public/books.json"),
+          children: [
+            {
+              index: true,
+              element: <ReadLists></ReadLists>,
+              loader: () => fetch("/public/books.json")
+            }
+          ]
       },
       {
         path: "/pages-to-read",
