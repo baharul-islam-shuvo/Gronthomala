@@ -13,6 +13,7 @@ import Books from './Components/Books/Books';
 import BookDetails from './Components/BookDetails/BookDetails';
 import ReadLists from './Components/ReadLists/ReadLists';
 import WishLists from './Components/WishLists/WishLists';
+import ErrorPage from './ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
         loader: () => fetch("/public/books.json")
       },
     ],
+    errorElement: <ErrorPage></ErrorPage>
   },
 ]);
 
