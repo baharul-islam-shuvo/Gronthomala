@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import cover_img from '../../../public/images/book_cover.png'
+import cover_img from '../../assets/book_cover.png'
 const Banner = () => {
     return (
         <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:px-28 py-8 lg:py-20 bg-[#1313130D] m-4 gap-10 font-bold rounded-xl">
