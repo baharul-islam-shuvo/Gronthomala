@@ -8,7 +8,7 @@ import {
 import Root from './Root/Root';
 import Home from './Components/Home/Home';
 import ListedBooks from './Components/ListedBooks/ListedBooks';
-import PagesToRead from './Components/Banner/PagesToRead/PagesToRead';
+import PagesToRead from './Components/PagesToRead/PagesToRead';
 import Books from './Components/Books/Books';
 import BookDetails from './Components/BookDetails/BookDetails';
 import ReadLists from './Components/ReadLists/ReadLists';
@@ -43,6 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pages-to-read",
+        loader: ()=> fetch("/public/books.json"),
         element: <PagesToRead></PagesToRead>
       },
       {
